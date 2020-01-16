@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/trip_details_picture_iv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/colorBlackTransparent"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/trip_details_picture_favourite_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_favorite"
+                android:tint="@color/colorAccent"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/add_edit_content_padding"
+                app:layout_constraintTop_toBottomOf="@id/trip_details_picture_iv">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_destination_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_weather_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/weather"
+                    app:layout_constraintBottom_toBottomOf="@id/trip_details_weather_iv"
+                    app:layout_constraintEnd_toEndOf="@id/label_barrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trip_details_weather_iv" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/trip_details_weather_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toEndOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/trip_details_destination_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_weather_description_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_weather_iv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_weather_temp_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_weather_description_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_weather_humidity_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_weather_temp_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_type_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/trip_details_weather_humidity_tv" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_price_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="2000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/trip_details_type_label" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_price_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/price"
+                    app:layout_constraintBottom_toBottomOf="@id/trip_details_price_tv"
+                    app:layout_constraintEnd_toEndOf="@id/label_barrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trip_details_price_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_start_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/start_date"
+                    app:layout_constraintBottom_toBottomOf="@id/trip_details_start_date_tv"
+                    app:layout_constraintEnd_toEndOf="@id/label_barrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trip_details_start_date_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_start_date_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_price_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_end_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/end_date"
+                    app:layout_constraintBottom_toBottomOf="@id/trip_details_end_date_tv"
+                    app:layout_constraintEnd_toEndOf="@id/label_barrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trip_details_end_date_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_end_date_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_start_date_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/trip_details_rating_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/rating"
+                    app:layout_constraintBottom_toBottomOf="@id/trip_details_rating_bar"
+                    app:layout_constraintEnd_toEndOf="@id/label_barrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trip_details_rating_bar" />
+
+                <RatingBar
+                    android:id="@+id/trip_details_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/trip_details_end_date_tv" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/label_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="right"
+                    app:constraint_referenced_ids="trip_details_start_date_label,trip_details_end_date_label,trip_details_rating_label,trip_details_price_label,trip_details_weather_label"
+                    tools:layout_editor_absoluteX="95dp"
+                    tools:layout_editor_absoluteY="32dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
